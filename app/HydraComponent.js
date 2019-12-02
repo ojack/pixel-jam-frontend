@@ -1,5 +1,5 @@
 import React from 'react'
-//import Hydra from 'hydra-synth'
+import Hydra from './hydra-synth-shared'
 import repl from './repl.js'
 
 export default class HydraComponent extends React.Component {
@@ -11,7 +11,7 @@ export default class HydraComponent extends React.Component {
      componentDidMount () {
        this.hydraCanvas.width = window.innerWidth
        this.hydraCanvas.height = window.innerHeight
-       this.hydra  = new window.Hydra({
+       this.hydra  = new Hydra({
           canvas: this.hydraCanvas
         })
         repl.eval(`render()`)

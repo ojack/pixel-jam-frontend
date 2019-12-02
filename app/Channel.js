@@ -116,13 +116,13 @@ export default class Channel extends React.Component {
           <div className="flex">
             <span style={{color: this.props.color}} className="mr-3"> {this.props.user}:</span>
              <form onSubmit={this.handleSubmit}>
-             <input autoFocus
-               ref={(input) => { this.codeInput = input }}
-               className="bg-black font-mono"
-               type="text"
-               value={this.state.code}
-               placeholder='Type code here and press <Enter>'
-               onChange={this.handleChange} />
+               <textarea autoFocus
+                  onKeyDown={this.onKeyPressed}
+                 ref={(input) => { this.codeInput = input }}
+                 className="bg-black font-mono"
+                 type="text"
+                 value={this.state.code}
+                 onChange={this.handleChange}> </textarea>
             </form>
           </div>
         </div>
@@ -130,6 +130,14 @@ export default class Channel extends React.Component {
     );
   }
 }
+
+// <input autoFocus
+//   ref={(input) => { this.codeInput = input }}
+//   className="bg-black font-mono"
+//   type="text"
+//   value={this.state.code}
+//   placeholder='Type code here and press <Enter>'
+//   onChange={this.handleChange} />
 
 // <input autoFocus
 //   ref={(input) => { this.codeInput = input }}
